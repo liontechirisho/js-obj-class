@@ -1,0 +1,1 @@
+js-obj-class
