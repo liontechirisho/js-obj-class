@@ -1,25 +1,24 @@
 # You don't know JS
-## 混合（淆）“类”的对象 class
+## 混合（淆）“類”的對象 class
 ***
 ### 引言
-class概念并不是非常自然地映射到 JS 的对象机制上，许多 JavaScript 开发者为了克服这些挑战所做的努力（mixins等）。
-(Me: 畢竟是後來的語言要吸引大家使用)
-
-1. 物件導向設計
-<a src='https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1'>
-Object-oriented programming OOP
-</a>
-
-2. CLASS 類別
-
-3. 類別的機制:“实例化（instantiation）”, “继承（inheritance）”与“（相对）多态(relative polymorphism）”。
+class概念並不是非常自然地映射到 JS 的物件機制上，  
+許多 JavaScript 開發者為了克服這些挑戰所做的努力（mixins等）。  
 
 
-### Class 類理論
+1. 物件導向設計 Object-oriented programming OOP
+https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
 
-强调数据和操作它的行为之间有固有的联系
+2. CLASS 類
 
-什麼是物件=> 模型/藍圖  
+3. 類別的機制:“產生實體（instantiation）”, “繼承（inheritance）”與“（相對）多態(relative polymorphism）”。
+
+4. JS 模擬類的努力
+
+
+### 什麼是Class?  
+
+=> 模型/藍圖  
 
 
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/blueprints2.jpg)  
@@ -34,33 +33,34 @@ Object-oriented programming OOP
 圖片來源: 小山的C#教學https://www.youtube.com/watch?v=gpjAFBh3GJ4
 ```
 
+### 在JS中
+```
+表示一個單詞或短語的一系列字元通常稱為“string（字串）”。
+這些字元就是資料。
+你總是想對資料 做事情， 所以可以 向 資料實施的行為
+（計算它的長度，在末尾添加資料，檢索，等等）
+都被設計成為 String 類的方法。
+```
+   **任何給定的字串都是這個類的一個實例**
+
+***
 ### OOP的三大特性: 封裝、繼承、多型
 
 1. **資料封裝(Encapsulation)**
-```
-表示一个单词或短语的一系列字符通常称为“string（字符串）”。
-这些字符就是数据。
-你总是想对数据 做事情， 所以可以 向 数据实施的行为
-（计算它的长度，在末尾添加数据，检索，等等）
-都被设计成为 String 类的方法。
-```
-   **任何给定的字符串都是这个类的一个实例**
-
-   資料封裝就是將資料分成私用(Private)、保護(Protected)、公用(Public)等，實踐 Information hiding 概念, 避免程式各個物件互相干擾，降低程式的複雜度及維護上的困難度。
+   資料封裝就是將資料分成私用(Private)、保護(Protected)、公用(Public)等，實踐 Information hiding 概念,   
+   避免程式各個物件互相幹擾，降低程式的複雜度及維護上的困難度。  
 
 2. **繼承(Inheritance)**
-  ##### 類=類別
+  類=類別
   **載具與車子**
-  每一种不同类型的载具一次又一次地重定义“载人能力”这个基本性质可能没有道理。
-  反而，我们在 Vehicle 中把这个能力定义一次，之后当我们定义 Car 时，
-  我们简单地指出它从基本的 Vehicle 定义中“继承”（或“扩展”）。
+  每一種不同類型的載具一次又一次地重定義“載人能力”這個基本性質可能沒有道理。
+  反而，我們在 Vehicle 中把這個能力定義一次，之後當我們定義 Car 時，
+  我們簡單地指出它從基本的 Vehicle 定義中“繼承”（或“擴展”）。
   有繼承的關係後，父類別 (Super class) 中的資料 (Data) 或方法 (Method) 在次子類(Subclass)就可以繼承使用，次子類別的次子類別也可以繼承使用，最後即能達到資料重覆使用的目的。
 
 3. **多型(Polymorphism)**  
-   于父类的泛化行为可以被子类覆盖，从而使它更加具体。实际上，相对多态允许我们在覆盖行为中引用基础行为。
+   于父類的泛化行為可以被子類覆蓋，從而使它更加具體。實際上，相對多態允許我們在覆蓋行為中引用基礎行為。
    多型(Polymorphism) 代表能夠在執行階段，物件能夠依照不同情況變換資料型態，換句話說，多型是指一個物件參考可以在不同環境下，扮演不同角色的特性，指向不同的物件實體，可 透過實作多個繼承或介面來實現父類別，並使用Override或Overload來達成。
-
-
 
 ***
 
@@ -74,8 +74,8 @@ Object-oriented programming OOP
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/DATA%20MANAGEMENT%20IN%20PROCEDURAL%20AND%20OBJECT%20ORIENTED%20MODELS.png)
 
 
-有些语言（比如 Java）不给你选择，所以这根本没什么 选择性 —— 一切都是类。
-其他语言如 C/C++ 或 PHP 同时给你过程式和面向类的语法，在使用哪种风格合适或混合风格上，留给开发者更多选择。
+有些語言（比如 Java）不給你選擇，所以這根本沒什麼 選擇性 —— 一切都是類。
+其他語言如 C/C++ 或 PHP 同時給你過程式和面向類的語法，在使用哪種風格合適或混合風格上，留給開發者更多選擇。
 
 ### 總結: CLASS 的定義
 而類別則較具抽象的概念，也就是某些具有共同特性物件的集合
@@ -144,11 +144,11 @@ before you have a concrete data structure thing to operate against.
 沒有存在class 的methods給你訪問DATA
 ```
 ### 其實...JS裡面沒有類
-* JS 拥有 一些 像类的语法元素（比如 new 和 instanceof）有一阵子了，  
-* ES6 中，还有一些追加的东西，比如 class 关键字（见附录A）。   
+* JS 擁有 一些 像類的語法元素（比如 new 和 instanceof）有一陣子了，  
+* ES6 中，還有一些追加的東西，比如 class 關鍵字（見附錄A）。   
 * **ES6裡面class 是一種語法糖**    
-* 在其他语言中遇到的 类 和在 JS 中模拟的“类”不同  
-* 你可以选择在 JavaScript 中使用或不使用類  
+* 在其他語言中遇到的 類 和在 JS 中模擬的“類”不同  
+* 你可以選擇在 JavaScript 中使用或不使用類  
 
 ### 類機制
 
@@ -160,7 +160,7 @@ before you have a concrete data structure thing to operate against.
 * Stack長相
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/memory-layout-of-c-program-diagram-20170301-1024x962.png)  
 
-<a src="https://blog.gtwang.org/programming/memory-layout-of-c-program/">了解更多</a>
+<a src="https://blog.gtwang.org/programming/memory-layout-of-c-program/">瞭解更多</a>
 
  ```
  原文:
@@ -171,17 +171,17 @@ which gives your code the ability to interact with the (hidden) data (adding & r
 ```
 
 ##### 你不是直接在 Stack 上操作
-* StackClass它本身不是一个“stack” 。
-* 为了得到一个可以对之进行操作的实在的数据结构(data structure)
-* **必须 实例化 这个 StackClass**
+* StackClass它本身不是一個“stack” 。
+* 為了得到一個可以對之進行操作的實在的資料結構(data structure)
+* **必須 產生實體 這個 StackClass**
 
 ##### 物件就是Class的複製
 This object is a copy of all the characteristics described by the class.
 
-**一个CLASS就是一个蓝图。**
+**一個CLASS就是一個藍圖。**
 但實例做出來你才能住或吃(操作)。
 
-一个类通过**拷贝**被实例化为物件。
+一個類通過**拷貝**被產生實體為物件。
 ```
 class-based
 水果 class
@@ -194,9 +194,9 @@ class-based
 ![image](https://github.com/getify/You-Dont-Know-JS/blob/1ed-zh-CN/this%20%26%20object%20prototypes/fig1.png)
 
 ### 如何實例化？
-* 使用构造器（constructor）  
-* 这个方法的名称通常与类名相同  
-* 此方法會初始化实例所需的所有信息（状态）  
+* 使用構造器（constructor）  
+* 這個方法的名稱通常與類名相同  
+* 此方法會初始化實例所需的所有資訊（狀態）  
 
 ```
 class CoolGuy {
@@ -227,7 +227,7 @@ Joe.showOff()   <---實例化Joe，可使用class制定且他clone下來的方�
 對class-based 語言來說，
 1. 可以定義一個類
 2. 一個類可以繼承另一類(extend)
-3. 第一个类被称为“父类”，第二个类通常被称为“子类”
+3. 第一個類被稱為“父類”，第二個類通常被稱為“子類”
 
 #####  類繼承
 
@@ -272,32 +272,32 @@ class SpeedBoat inherits Vehicle {                 <----繼承Vehicle
 }
 ```
 
-* 两种具体的载具：Car 和 SpeedBoat。继承後特化。    
-一辆车有4个轮子，一艘快艇有两个引擎  
-* inherited:drive() Car 可以引用它继承的，原版 drive()。 (同時可以使用新的方法)  
+* 兩種具體的載具：Car 和 SpeedBoat。繼承後特化。    
+一輛車有4個輪子，一艘快艇有兩個引擎  
+* inherited:drive() Car 可以引用它繼承的，原版 drive()。 (同時可以使用新的方法)  
 
 ##### 多型
 
-这种技术称为“多型（polymorphism）”，  
-**多型: 任何方法都可以引用位于继承层级上更高一层的其他（同名或不同名的）方法。**
+這種技術稱為“多型（polymorphism）”，  
+**多型: 任何方法都可以引用位於繼承層級上更高一層的其他（同名或不同名的）方法。**
 
-或“虚拟多型（virtual polymorphism）”。  
-作者稱之**相对多态（relative polymorphism）**  
+或“虛擬多型（virtual polymorphism）”。  
+作者稱之**相對多態（relative polymorphism）**  
 
-drive() 方法的定义，根据你引用的实例是哪个类（class or Vehicle）而 多态（改变）。
+drive() 方法的定義，根據你引用的實例是哪個類（class or Vehicle）而 多態（改變）。
 ```
 BMW =  new Car();
 BMW.drive()
-// 啟動引擎  往前開 ----class Vehicle 定義的方法 位於继承层级上更高一层
+// 啟動引擎  往前開 ----class Vehicle 定義的方法 位於繼承層級上更高一層
 // 轉動輪子 4 四輪的喔 -----class Car 定義的方法
 ```
 
 ##### 與JS的差別
-class-based語言通过 super，从子类的构造器中直接访问父类构造器。(构造器在class中)
-* 在 JS 中，这是相反的 —— **class 在構造器中（Foo.prototype... 类型引用）**。  
-* 父子关系仅存在于它们各自的构造器的两个.prototype物件间，
-* JS的构造器本身不直接关联
-* 没有简单的方法从一个中相对引用另一个（参见附录A，看看 ES6 中用 super “解决”此问题的 class）。
+class-based語言通過 super，從子類的構造器中直接訪問父類構造器。(構造器在class中)
+* 在 JS 中，這是相反的 —— **class 在構造器中（Foo.prototype... 類型引用）**。  
+* 父子關係僅存在於它們各自的構造器的兩個.prototype物件間，
+* JS的構造器本身不直接關聯
+* 沒有簡單的方法從一個中相對參照另一個（參見附錄A，看看 ES6 中用 super “解決”此問題的 class）。
 
 ```
 水果 object   
@@ -307,17 +307,17 @@ class-based語言通过 super，从子类的构造器中直接访问父类构造
 
 ### 類繼承是拷貝
 * super: 讓你可以使用繼承的class的方法   
-* 理論上: 子类 Bar可以使用super来访问它的父类 Foo 的方法。
-* 但现实中: 子类是**拷貝**一份它从父类继承来的行为。(存在新的地方)
-* 如果子类“覆盖”一个它继承的方法，原版的方法和覆盖版的方法实际上都是存在的，所以它们都是可以访问的。  
+* 理論上: 子類 Bar可以使用super來訪問它的父類 Foo 的方法。
+* 但現實中: 子類是**拷貝**一份它從父類繼承來的行為。(存在新的地方)
+* 如果子類“覆蓋”一個它繼承的方法，原版的方法和覆蓋版的方法實際上都是存在的，所以它們都是可以訪問的。  
 
-不要让多态把你搞糊涂，
-Ｘ：子类是链接到父类上的(不是在父類存方法的地方得到方法)
-Ｏ：子类得到一份它需要从父类继承的东西的拷贝 (把父類方法存到新地方，舊地方還是有東西)
+不要讓多態把你搞糊塗，
+Ｘ：子類是連結到父類上的(不是在父類存方法的地方得到方法)
+Ｏ：子類得到一份它需要從父類繼承的東西的拷貝 (把父類方法存到新地方，舊地方還是有東西)
 
-所以...**类继承意味着拷贝**  
+所以...**類繼承意味著拷貝**  
 
-### 多重继承（Multiple Inheritance）
+### 多重繼承（Multiple Inheritance）
 classed-based 可能發生的問題  
 * 好處:多個功能  
 * 壞處:可能衝突且複雜  
@@ -330,37 +330,37 @@ classed-based 可能發生的問題
 ![image](https://github.com/getify/You-Dont-Know-JS/blob/1ed-zh-CN/this%20%26%20object%20prototypes/fig2.png)
 
 ### 比較JS  
-JS不提供多重继承機制
+JS不提供多重繼承機制
 
 ***
 ### 混合（Mixin）
 ##### JS- 原型練繼承
 * 剛提到: 類繼承是拷貝  
-* 在JS中，当你“继承”或是“实例化”时，JS **不会 自动地 执行拷贝行为**。  
-* 因為: JavaScript 没有“类”可以拿来实例化，只有对Obj。  
-* Obj也不会被拷贝到另一个Obj中，而是**链接在一起**（详见第五章）。  
-* ＪＳ的方法: 模拟沒有类的拷贝行为 => mixins（混合）。  
+* 在JS中，當你“繼承”或是“產生實體”時，JS **不會 自動地 執行拷貝行為**。  
+* 因為: JavaScript 沒有“類”可以拿來產生實體，只有對Obj。  
+* Obj也不會被拷貝到另一個Obj中，而是**連結在一起**（詳見第五章）。  
+* ＪＳ的方法: 類比沒有類的拷貝行為 => mixins（混合）。  
 
-### 两种“mixin”：明确的（explicit） 和 隐含的（implicit）
+### 兩種“mixin”：明確的（explicit） 和 隱含的（implicit）
 
-##### 明确的 Mixin（Explicit Mixins）  
-建造一个工具来手动拷贝  
-通常稱為extend，这里叫它 mixin(..)。  
+##### 明確的 Mixin（Explicit Mixins）  
+建造一個工具來手動拷貝  
+通常稱為extend，這裡叫它 mixin(..)。  
 
 ```JS
-// 大幅简化的手動工具 `mixin(..)` 示例：  取代類的自動拷貝功能
+// 大幅簡化的手動工具 `mixin(..)` 示例：  取代類的自動拷貝功能
 function mixin( Vehicle, Car) {
     for (var key in Vehicle) {
-        // 仅拷贝不存在的属性
+        // 僅拷貝不存在的屬性
         if (!(key in Car)) {
            Car[key] =Vehicle[key];
         }
-    }   //如果在 targetObj（在我们的例子中是 Car）中没有名称与之匹配的属性，它就进行拷贝
+    }   //如果在 targetObj（在我們的例子中是 Car）中沒有名稱與之匹配的屬性，它就進行拷貝
     return Car;
 }
 ```
 ```JS
-//  創建一個模板Vehicle (類 但其實是obj)
+//  創建一個範本Vehicle (類 但其實是obj)
 var Vehicle = {
     engines: 1,  // 子類Car 將 copy  value
 
@@ -384,29 +384,29 @@ var Car = mixin( Vehicle, {
     }
 } );
 ```
-* 父類(obj)中的函数没有被复制，而是指向函数的**引用**被复制。  
+* 父類(obj)中的函數沒有被複製，而是指向函數的**引用**被複製。  
 * 因為子car 父vehicle都有drive()
 O : Vehicle.drive.call( this )    
 X : 若寫成 Vehicle.drive()  (沒有綁定在car上呼叫) 則引用後無法使用car環境中執行    
 
 ```
-[Class-based]inherited:drive()。作者称之为“相对多态（relative polymorphism）”
+[Class-based]inherited:drive()。作者稱之為“相對多態（relative polymorphism）”
 
-[JS]Vehicle.drive.call( this )。作者将之称为“显式假想多态（explicit pseudo-polymorphism）”。
+[JS]Vehicle.drive.call( this )。作者將之稱為“顯式假想多態（explicit pseudo-polymorphism）”。
 ```
 
 
-* JavaScript 没有能力实现相对多态（ES6 之前，见附录A）。
-因为 Car 和 Vehicle 都有一个名为 drive() 的函数，为了在它们之间区别调用，  
-* 必须使用**绝对（不是相对）引用**。
-明确地用名称指出 Vehicle 对象，然后在它上面调用 drive() 函数。  
+* JavaScript 沒有能力實現相對多態（ES6 之前，見附錄A）。
+因為 Car 和 Vehicle 都有一個名為 drive() 的函數，為了在它們之間區別調用，  
+* 必須使用**絕對（不是相對）引用**。
+明確地用名稱指出 Vehicle 物件，然後在它上面調用 drive() 函數。  
 
 這裏只是為了演示需要，
-**应当尽可能地避免使用显式假想多态（Vehicle.drive.call( this )）**
+**應當盡可能地避免使用顯式假想多態（Vehicle.drive.call( this )）**
 
 ***
 
-### 混合拷贝（Mixing Copies）
+### 混合拷貝（Mixing Copies）
 
 * 建立時就給car的內容
 
@@ -420,14 +420,14 @@ var Car = mixin( Vehicle, {
 } );
 ```
 
-* 建立時還沒給car的內容(“mixin”这个名称来自于解释這個方法：Car 混入 Vehicle 的内容 )
+* 建立時還沒給car的內容(“mixin”這個名稱來自於解釋這個方法：Car 混入 Vehicle 的內容 )
 ```
-// 首先，创建一个空对象
-// 将 Vehicle 的内容拷贝进去
+// 首先，創建一個空物件
+// 將 Vehicle 的內容拷貝進去
 var Car = mixin( Vehicle, { } );
 ```
 ```
-// 现在拷贝 Car 的具体内容
+// 現在拷貝 Car 的具體內容
 mixin( {
 	wheels: 4,
 
@@ -437,26 +437,26 @@ mixin( {
 }, Car );
 ```
 ***
-**不论哪种方法，我们都明确地将 Vehicle 中的非重叠内容拷贝到 Car 中。**  
-**在 Car 上添加属性，它不会影响到 Vehicle，反之亦然。**  
+**不論哪種方法，我們都明確地將 Vehicle 中的非重疊內容拷貝到 Car 中。**  
+**在 Car 上添加屬性，它不會影響到 Vehicle，反之亦然。**  
 ***
 
-##### BUT 拷贝完成后还能互相“影响”对方
-比如它们共享一个共通对象（比如数组）的引用。  
+##### BUT 拷貝完成後還能互相“影響”對方
+比如它們共用一個共通物件（比如陣列）的引用。  
 拷貝的是位置不是值的就會受到影響
 
 ##### 結論：
-1. 将一个属性定义两次相比 VS 将属性从一个对象拷贝到另一个对象?
-并不会产生多少 实际的 好处
-2. JS “多重继承”的行为可以被模擬出來，但不易維護，不會用不要用。
-3. 在第六章中，我们将试着提取一种更简单的方法来实现我们期望的结果，同时免去这些周折。
+1. 將一個屬性定義兩次相比 VS 將屬性從一個物件拷貝到另一個物件?
+並不會產生多少 實際的 好處
+2. JS “多重繼承”的行為可以被模擬出來，但不易維護，不會用不要用。
+3. 在第六章中，我們將試著提取一種更簡單的方法來實現我們期望的結果，同時免去這些周折。
 
 ***
-### 寄生继承（Parasitic Inheritance）
-明确的 mixin 模式的一个变种  
-在某种意义上是明确的而在某种意义上是隐含的  
+### 寄生繼承（Parasitic Inheritance）
+明確的 mixin 模式的一個變種  
+在某種意義上是明確的而在某種意義上是隱含的  
 ```
-// “传统的 JS 类” `Vehicle`
+// “傳統的 JS 類” `Vehicle`
 function Vehicle() {
     this.engines = 1;
 }
@@ -469,21 +469,21 @@ Vehicle.prototype.drive = function() {
 };
 
 
-// “寄生类” `Car`
+// “寄生類” `Car`
 function Car() {
-    // 首先, `car` 是一个 `Vehicle`
+    // 首先, `car` 是一個 `Vehicle`
     var car = new Vehicle();
 
 
-    // 现在, 我们修改 `car` 使它特化
+    // 現在, 我們修改 `car` 使它特化
     car.wheels = 4;
 
 
-    // 保存一个 `Vehicle::drive()` 的引用
+    // 保存一個 `Vehicle::drive()` 的引用
     var vehDrive = car.drive;
 
 
-    // 覆盖 `Vehicle::drive()`
+    // 覆蓋 `Vehicle::drive()`
     car.drive = function() {
         vehDrive.call( this );  //不直接用爸爸的位置，而是先把位置存在另個地方(vehDrive)
         console.log( "Rolling on all " + this.wheels + " wheels!" );
@@ -501,7 +501,7 @@ myCar.drive();
 // Rolling on all 4 wheels!
 ```
 ***
-### 隐含的 Mixin（Implicit Mixins）
+### 隱含的 Mixin（Implicit Mixins）
 ```
 var Something = {
     cool: function() {
@@ -518,7 +518,7 @@ Something.count; // 1
 
 var Another = {
     cool: function() {
-        // 隐式地将 `Something` 混入 `Another`
+        // 隱式地將 `Something` 混入 `Another`
         Something.cool.call( this );  this===Another
     }
 };
@@ -526,19 +526,19 @@ var Another = {
 
 Another.cool();
 Another.greeting; // "Hello World"
-Another.count; // 1 (不会和 `Something` 共享状态)
+Another.count; // 1 (不會和 `Something` 共用狀態)
 
 ```
 
-将 Something 的行为“混入”了 Another。
-**应当尽量避免使用这种结构 以保持代码干净而且易于维护。**
+將 Something 的行為“混入”了 Another。
+**應當儘量避免使用這種結構 以保持代碼乾淨而且易於維護。**
 
 ### 結論
-* 类意味着拷贝。  
-* 当一个传统的类被实例化时，就发生了类的行为向实例中拷贝。
-* 当类被继承时，也发生父类的行为向子类的拷贝。  
-* 多态（在继承链的不同层级上拥有同名的不同函数）看起来是子类回到父类的相对引用链接，但是仍是拷贝行为的结果。   
-* JavaScript 不会自动地 （像类那样）在对象间创建拷贝。  
-* mixin 模式常用于在 某种程度上 模拟类的拷贝行为，但是这通常导致像显式假想多态那样（OtherObj.methodName.call(this, ...)）难看而且脆弱的语法，这样的语法又常导致更难懂和更难维护的代码。  
-* 明确的 mixin 和类 拷贝 又不完全相同，因为物件（和函数！）仅仅是引用被复制，不是对象/函数自身被复制    
-* 一般来讲，在 JS 中模拟类通常会比解决当前 真正 的问题埋下更多的坑。  
+* 類意味著拷貝。  
+* 當一個傳統的類被產生實體時，就發生了類的行為向實例中拷貝。
+* 當類被繼承時，也發生父類的行為向子類的拷貝。  
+* 多態（在繼承鏈的不同層級上擁有同名的不同函數）看起來是子類回到父類的相對參照連結，但是仍是拷貝行為的結果。   
+* JavaScript 不會自動地 （像類那樣）在物件間創建拷貝。  
+* mixin 模式常用於在 某種程度上 類比類的拷貝行為，但是這通常導致像顯式假想多態那樣（OtherObj.methodName.call(this, ...)）難看而且脆弱的語法，這樣的語法又常導致更難懂和更難維護的代碼。  
+* 明確的 mixin 和類 拷貝 又不完全相同，因為物件（和函數！）僅僅是引用被複製，不是物件/函數自身被複製    
+* 一般來講，在 JS 中模擬類通常會比解決當前 真正 的問題埋下更多的坑。  
