@@ -1,12 +1,14 @@
 # You don't know JS
 
-## Object 對象
+## Object 物件
 
 ---
+### &sect; 什麼是物件Object?
 
-##### 兩種建立方式
 
-1.宣告
+### &sect; 兩種建立方式
+
+1. 宣告
 
 ```js
 var myObj = {
@@ -15,14 +17,14 @@ var myObj = {
 };
 ```
 
-2.建構　(要一一給予屬性)
+2. 建構　(要一一給予屬性)
 
 ```js
 var myObj = new Object();
 myObj.key = value;
 ```
 
-##### 類型(同之前章節所述)
+### &sect; 類型(同之前章節所述)
 
 - string 簡單基本類型
 - number 簡單基本類型
@@ -31,7 +33,7 @@ myObj.key = value;
 - undefined 簡單基本類型
 - object-----自己是一個類型
 
-###### 複雜基本類型:
+##### &para; 複雜基本類型:
 
 - object 的子類型 Function :可調用，可像普通物件般處理
   ++++++加 克服 JS 的奇怪部分的截圖
@@ -39,7 +41,8 @@ myObj.key = value;
 
 ---
 
-##### 內建物件/對象=== 內建的函數(可 new)/有對應的方法和屬性
+### &sect; 內建物件
+##### 內建的函數(可 new)/有對應的方法和屬性
 
 - String
 - Number
@@ -55,12 +58,14 @@ myObj.key = value;
 
 **思考**  
 物件 = key-value pairs  
+Section 5: JavaScript
+的物件導向與原型繼承
 v.s  
 一個常見的錯誤論斷是“JavaScript 中的一切都是物件"
 
 ---
 
-##### 基本類型值 vs 內建物件/對象(子類型)
+### &sect; 基本類型值 vs 內建物件(子類型)
 
 ```js
 //基本類型值
@@ -76,7 +81,7 @@ strObject instanceof String; // true
 ```
 
 JS 會強制轉型為 sting 物件(自己默默用 toString 幫你)，  
-故可以使用 string 的屬性如 length↓↓↓↓↓
+故不用new，仍可以使用 string 的屬性如 length↓↓↓↓↓
 
 ```js
 var strPrimitive = "I am a string";
@@ -86,9 +91,10 @@ console.log(strPrimitive.length); // 13
 console.log(strPrimitive.charAt(3)); // "m"
 ```
 
-強烈推薦用字面型值操作即可，不需要特別 new
+**強烈推薦用字面型值操作即可，不需要特別 new**
 
-##### 各子類型狀況
+***
+##### &para; 各子類型狀況
 
 - String JS 會強制轉型，建議用字面形式寫
 - Number JS 會強制轉型，建議用字面形式寫
@@ -105,9 +111,10 @@ console.log(strPrimitive.charAt(3)); // "m"
   --------------------------------------------------->
 - Error -- 很少被手動創建，多拋出異常時自動創建
 
-##### 訪問物件內容之方法
-
-為了訪問 myObject 在位置 a 的值，我們需要使用。或[]操作符。兩者皆訪問相同位置
+##### &para; 訪問物件內容之方法
+可使用兩種操作符:
+* .
+* []
 
 ```js
 var myObject = {
@@ -120,7 +127,7 @@ myObject.a; // 2
 myObject["a"]; // 2
 ```
 
-如果不確定要訪問的是哪個屬性，就只能使用[裝變數]
+訪問的屬性由變數決定，就只能使用[裝變數]
 
 ```JS
 作業三，因為不確定輸入的是哪個名稱
