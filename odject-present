@@ -255,7 +255,7 @@ myArray[3]; // "baz"
 ---
 
 ### &sect; 複製物件 是一個大工程
-與淺拷貝
+與深淺拷貝概念類似
 ```js
 function anotherFunction() {
   /*..*/
@@ -298,7 +298,7 @@ let noRepeat = JSON.parse(JSON.stringify(orderDay));
 
 ---
 
-##### 屬性描述符（Property Descriptors）
+### &sect; 屬性描述符（Property Descriptors）
 
 為何有這個東西？  
 ES5 之前，JavaScript 語言沒有給出直接的方法，讓你的代碼可以考察或描述屬性性質間的區別，比如屬性是否為只讀(不可複寫)。  
@@ -335,7 +335,7 @@ Object.defineProperty(myObject, "a", {
 myObject.a; // 2
 ```
 
-#### 三個性質說明
+### &sect; 三個性質說明
 
 ###### 1. 可寫性（Writable）
 
@@ -405,7 +405,7 @@ myObject.a; // 2
 
 ---
 
-##### 不可變性（不變性）
+### &sect; 不可變性（不變性）
 
 有時我們希望將屬性或對象（有意或無意地）設置為不可改變的，ES5 用幾種不同的微妙方式，加入了對此功能的支持。  
 **BUT 所有方法都是"淺"不可變**，也就是數組內部資料鎖不到（似淺拷貝）  
