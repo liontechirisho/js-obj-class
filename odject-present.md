@@ -3,22 +3,22 @@
 ## Object 物件
 
 ---
-### &sect; 什麼是物件Object?
-##### &para; key-value pair
+## &sect; 什麼是物件Object?
+### &para; key-value pair
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(1).JPG)
 ***
-##### &para; JS物件是key-value pairs的集合
+### &para; JS物件是key-value pairs的集合
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(2).JPG)
 ***
-##### &para; 物件可以包含任何物件(key-value pairs)
+### &para; 物件可以包含任何物件(key-value pairs)
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(3).JPG)
 
 ***
-##### &para; 例如=> 物件內可含純值/物件/function
+### &para; 例如=> 物件內可含純值/物件/function
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(4).JPG)
 
 ***
-### &sect; 兩種建立物件的方式
+## &sect; 兩種建立物件的方式
 
 1. 宣告
 
@@ -36,7 +36,7 @@ var myObj = new Object();
 myObj.key = value;
 ```
 
-### &sect; 類型(同之前章節所述)
+## &sect; 類型(同之前章節所述)
 
 - string 簡單基本類型
 - number 簡單基本類型
@@ -45,13 +45,13 @@ myObj.key = value;
 - undefined 簡單基本類型
 - object-----自己是一個類型
 
-##### &para; 複雜基本類型:
+### &para; 複雜基本類型:
 - object 的子類型 Array
 - object 的子類型 Function :可調用，可像普通物件般處理
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/fn.PNG))
 
 ***
-### &sect; JS中全部都是物件(或純值)
+## &sect; JS中全部都是物件(或純值)
 * 作者提到
 ```
 一個常見的錯誤論斷是“JavaScript 中的一切都是物件"
@@ -70,8 +70,8 @@ myObj.key = value;
 
 ---
 
-### &sect; 內建物件
-##### 內建的函數(可 new)/有對應的方法和屬性
+## &sect; 內建物件
+### 內建的函數(可 new)/有對應的方法和屬性
 
 - String
 - Number
@@ -85,7 +85,7 @@ myObj.key = value;
 
 ***
 
-### &sect; 基本類型值 vs 內建物件(子類型)
+## &sect; 基本類型值 vs 內建物件(子類型)
 
 ```js
 //基本類型值
@@ -131,7 +131,7 @@ console.log(strPrimitive.charAt(3)); // "m"
   --------------------------------------------------->
 - Error -- 很少被手動創建，多拋出異常時自動創建
 
-### &sect; 訪問物件內容之方法
+## &sect; 訪問物件內容之方法
 可使用兩種操作符:
 * .
 * []
@@ -225,7 +225,7 @@ myObject["[object Object]"];  －>物件被轉成字串 // "baz"
 
 ---
 
-##### &para; 屬性 vs 方法
+### &para; 屬性 vs 方法
 
 每次你訪問一個物件的屬性都是一個屬性訪問，無論你得到什麼類型的值。
 如果你恰好從屬性訪問中得到一個函數，**不會魔法般地變成方法** 。
@@ -237,7 +237,7 @@ ME: 我不知道他為啥要特別講這個...
 
 ---
 
-##### &para; 不要亂玩 Array 的屬性
+### &para; 不要亂玩 Array 的屬性
 
 數組也是物件，所以雖然每個索引都是正整數，你可以在數組上添加屬性：
 添加非數字屬性（不論是使用. 還是[]操作符語法）不會改變數組的長度所報告的值。
@@ -255,7 +255,7 @@ myArray[3]; // "baz"
 
 ---
 
-### &sect; 複製物件 是一個大工程
+## &sect; 複製物件 是一個大工程
 與深淺拷貝概念類似
 ```js
 function anotherFunction() {
@@ -299,7 +299,7 @@ let noRepeat = JSON.parse(JSON.stringify(orderDay));
 
 ---
 
-### &sect; 屬性描述符（Property Descriptors）
+## &sect; 屬性描述符（Property Descriptors）
 
 為何有這個東西？
 ES5 之前，JavaScript 語言沒有給出直接的方法，讓你的代碼可以考察或描述屬性性質間的區別，比如屬性是否為只讀(不可複寫)。
@@ -336,9 +336,9 @@ Object.defineProperty(myObject, "a", {
 myObject.a; // 2
 ```
 
-### &sect; 三個性質說明
+## &sect; 三個性質說明
 
-###### 1. 可寫性（Writable）
+### 1. 可寫性（Writable）
 
 writable 控制著你改變屬性值的能力。
 writable: false 表示不可再賦值
@@ -346,7 +346,7 @@ writable: false 表示不可再賦值
 嚴格模式：TypeError
 非嚴格模式：維持原值
 
-###### 2.可配置性（可配置的）
+### 2.可配置性（可配置的）
 
 是否可以使用 defineProperty（..）工具，修改它的描述符定義。
 configurable 設置為 false 是一個單向操作，不可撤銷！
@@ -398,7 +398,7 @@ delete myObject.a;
 myObject.a; // 2
 ```
 
-###### 3.可枚舉性（Enumerable）
+### 3.可枚舉性（Enumerable）
 
 控制著一個屬性是否能在特定的物件的屬性枚舉操作中出現，比如 for..in 循環。
 設置為 false 將會阻止它出現在這樣的枚舉中，即使它依然完全是可以訪問的。
@@ -406,7 +406,7 @@ myObject.a; // 2
 
 ---
 
-### &sect; 不可變性（不變性）
+## &sect; 不可變性（不變性）
 
 * 將屬性或對象（有意或無意地）設置為不可改變
 * ES5 加入了對此功能的支持。
@@ -420,7 +420,7 @@ myImmutableObject.foo; // [1,2,3,4]
 
 注意：設置不可變不常見，如果你發現自己想要封印（封印）或凍結（freeze），請退一步來重新考慮你的程式設計
 
-##### &para; 物件常量(Object Constant)
+### &para; 物件常量(Object Constant)
 
 **防止值被修改** (不能被改變，不可修改它的描述符定義）  
 如: const 常量
@@ -435,7 +435,7 @@ Object.defineProperty(myObject, "FAVORITE_NUMBER", {
 });
 ```
 
-##### &para; 防止擴展(Prevent Extensions)
+### &para; 防止擴展(Prevent Extensions)
 
 **防止被添加新的屬性**   
 可以使用 Object.preventExtensions（..）
@@ -453,7 +453,7 @@ myObject.b; // undefined
 → strict mode 跳 TypeError
 ```
 
-##### &para; 封印(Seal)
+### &para; 封印(Seal)
 
 **使用 Object.seal(..) 創建一個“封印”的 Object**  
 **1.不可增加新屬性 2.不可重新配置屬性**  
@@ -466,18 +466,18 @@ configurable:false
 值可變/描述符不可變(false後就不可逆)|| delete失效
 ```
 
-##### &para; 凍結(Freeze)
+### &para; 凍結(Freeze)
 
 **Object.freeze(..) 創建一個“凍結”的 Object**  
 =封印+值也不可變(writable:false)
 
 ---
 
-### &sect; 屬性訪問不是你以為的那麼簡單
+## &sect; 屬性訪問不是你以為的那麼簡單
 * [[Get]]操作 - 取得屬性
 * [[Put]]操作 - 設定或新增屬性
 
-### &sect; 內建的[[Get]]操作--取得既存屬性
+## &sect; 內建的[[Get]]操作--取得既存屬性
 
 屬性訪問可以用.跟[ ]
 
@@ -511,7 +511,7 @@ a.b 好像得到一樣的但其實不一樣
 
 處理 myObject.a工作量>處理 myObject.b。
 
-### &sect; 內建的[[Put]]操作--設定既存屬性或新增屬性值
+## &sect; 內建的[[Put]]操作--設定既存屬性或新增屬性值
 
 1. 有 setters 優先使用 setters  
    這個屬性是訪問器描述符嗎（見下一節"Getters 與 Setters"）？如果是，而且是 setter，就調用 setter。
@@ -520,7 +520,7 @@ a.b 好像得到一樣的但其實不一樣
    → strict mode 跳 TypeError  
 3. 否則，像平常一樣設置既存屬性的值。  
 
-### &sect; Getters 與 Setters
+## &sect; Getters 與 Setters
 
 * 是ES5 引入的方法來覆蓋上述[[Get]]和[[put]]的一部分  
 * 但不是在物件級別而是**針對每個屬性**  
@@ -597,7 +597,7 @@ myObject.a; // 4
 
 ---
 
-### &sect; 存在性（Existence）
+## &sect; 存在性（Existence）
 
 思考剛剛的問題:
 如何辨別屬性不存在的 undefined v.s 存著 undefined 值的屬性?
