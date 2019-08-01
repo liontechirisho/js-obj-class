@@ -11,12 +11,9 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 
 2. CLASS 類
 
-3. 類別的機制:“產生實體（instantiation）”, “繼承（inheritance）”與“（相對）多態(relative polymorphism）”。
+3. 類別的機制:“產生實體（instantiation）”, “繼承（inheritance）”與“（相對）多型(relative polymorphism）”。
 
-4. JS 模擬類的努力
-
-
-
+4. JS 模擬class的努力
 
 ***
 ## &sect; 什麼是物件導向programming?
@@ -36,6 +33,10 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 
 
 ## &sect; OOP的三大特性: 封裝、繼承、多型
+**OOP**  
+物件導向具有封裝、繼承、多型等特性，  
+原則上每個物件相互獨立且無關聯性  
+而物件導向程式設計就是依照物件的方法產生互動以完成要求。  
 
 1. **資料封裝(Encapsulation)**
    資料封裝就是將資料分成私用(Private)、保護(Protected)、公用(Public)等，實踐 Information hiding 概念,   
@@ -52,9 +53,6 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
    父類的method可以被子類覆蓋，
    透過實作多個繼承或介面來實現父類別，
    並使用Override或Overload來達成。
-
-
-
 ***
 
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/oop.png)
@@ -64,24 +62,14 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 ```
 ***
 ## &sect; 什麼是Class?  
-
+* 某些具有共同特性物件的集合
+* 物件就是類別的實體。
 => 模型/藍圖  
 
 
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/blueprints2.jpg)  
 ***
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/181017gn015.jpg)  
-***
-
-## &sect; 總結
-### class
-某些具有共同特性物件的集合
-物件就是類別的實體。
-### OOP
-物件導向具有封裝、繼承、多型等特性，
-原則上每個物件相互獨立且無關聯性
-而物件導向程式設計就是依照物件的方法產生互動以完成要求。
-
 ***
 
 ## &sect; Class-based vs Prototype-based programming
@@ -110,7 +98,7 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 
 ### &para; Prototype-based  (js)  
 1. 用Object **繼承** Object (objects 會被拷貝但不包含fn, array等)  
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(1).JPG)  
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(1).JPG)   
 
 ```js
 ### Prototype-based ###  
@@ -138,7 +126,8 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 * 可以使用Public methods(類中定義好的)去存取data，使得開發者可以操作DATA  
 * Stack長相
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/memory-layout-of-c-program-diagram-20170301-1024x962.png)  
-   ```
+
+```
 瞭解更多
 https://blog.gtwang.org/programming/memory-layout-of-c-program/   
 ```
