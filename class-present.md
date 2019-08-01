@@ -16,23 +16,29 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 4. JS 模擬類的努力
 
 
-## &sect; 什麼是Class?  
-
-=> 模型/藍圖  
 
 
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/blueprints2.jpg)  
 ***
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/181017gn015.jpg)  
-***
+## &sect; 什麼是物件導向programming?
 
+### Procedural programming
+###          V.S
+### Object-oriented programming (OOP)
+***
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/procedural-vs-oop.jpg)
+
+***
+</br>
+</br>
+
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/DATA%20MANAGEMENT%20IN%20PROCEDURAL%20AND%20OBJECT%20ORIENTED%20MODELS.png)
+***
 
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/oop.png)
 
 ```
 圖片來源: 小山的C#教學 https://www.youtube.com/watch?v=gpjAFBh3GJ4
 ```
-***
 
 ## &sect; OOP的三大特性: 封裝、繼承、多型
 
@@ -52,23 +58,10 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
    透過實作多個繼承或介面來實現父類別，
    並使用Override或Overload來達成。
 
-***
 
-## &sect; 什麼是物件導向programming?
-
-### Procedural programming
-###          V.S
-### Object-oriented programming (OOP)
-***
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/procedural-vs-oop.jpg)
 
 ***
-</br>
-</br>
 
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/DATA%20MANAGEMENT%20IN%20PROCEDURAL%20AND%20OBJECT%20ORIENTED%20MODELS.png)
-
-***
 
 
 ## &sect; 總結
@@ -86,6 +79,16 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 皆為ＯＯＰ
 
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/1_0jWIHlaV3zcjjniEOrovEQ.jpeg)  
+
+## &sect; 什麼是Class?  
+
+=> 模型/藍圖  
+
+
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/blueprints2.jpg)  
+***
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/181017gn015.jpg)  
+***
 
 ### &para; class-based
 1. 用Class **繼承** Class
