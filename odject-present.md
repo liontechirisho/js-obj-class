@@ -16,6 +16,7 @@
 ***
 ### &para; 例如=> 物件內可含純值/物件/function
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(4).JPG)
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/fn.PNG))
 
 ***
 ## &sect; 兩種建立物件的方式
@@ -48,7 +49,9 @@ myObj.key = value;
 ### &para; 複雜基本類型:
 - object 的子類型 Array
 - object 的子類型 Function :可調用，可像普通物件般處理
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/fn.PNG))
+
+
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/ts.PNG)
 
 ***
 ## &sect; JS中全部都是物件(或純值)

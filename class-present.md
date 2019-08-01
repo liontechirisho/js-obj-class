@@ -56,9 +56,9 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 
 ## &sect; 什麼是物件導向programming?
 
-## Procedural programming
-##          V.S
-## Object-oriented programming (OOP)
+### Procedural programming
+###          V.S
+### Object-oriented programming (OOP)
 ***
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/procedural-vs-oop.jpg)
 
@@ -94,33 +94,33 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 * 有哪些語言?  PHP, C++, Java, C#, and Objective-C....
 
   ```
-### class-based ###
-水果 class
-香蕉 class (extend fruit)
-製造出的每個香蕉  obj (clone banana 為class的實例)
+### class-based ###  
+水果 class  
+香蕉 class (extend fruit)  
+製造出的每個香蕉  obj (clone banana 為class的實例)  
 ```
 
   ```
-延伸:https://en.wikipedia.org/wiki/Class-based_programming
+延伸:https://en.wikipedia.org/wiki/Class-based_programming  
 ```
 
-### &para; Prototype-based  (js)
-1. 用Object **繼承** Object (objects 會被拷貝但不包含fn, array等)
+### &para; Prototype-based  (js)  
+1. 用Object **繼承** Object (objects 會被拷貝但不包含fn, array等)  
 
 ```
-### Prototype-based ###
-水果 object
-香蕉 object (prototype繼承)
-製造出的每個香蕉  object
+### Prototype-based ###  
+水果 object  
+香蕉 object (prototype繼承)  
+製造出的每個香蕉  object  
 ```
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/grasping_prototype_based_programming_by_stumbling_poncho_d4glx20-pre.jpg)
 
 
-## &sect; 其實...JS裡面沒有類
-* JS 擁有 一些 像類的語法元素（比如 new 和 instanceof）有一陣子了
-* ES6 中:有 class 關鍵字（見附錄A）。**但，是class 是一種語法糖**    
+## &sect; 其實...JS裡面沒有類  
+* JS 擁有 一些 像類的語法元素（比如 new 和 instanceof）有一陣子了  
+* ES6 中:有 class 關鍵字（見附錄A）。**但，是class 是一種語法糖**      
 * 注意: 其他語言中遇到的 類 和在 JS 中模擬的“類”不同  
-* 你可以選擇在 JavaScript 中使用或不使用類  
+* 你可以選擇在 JavaScript 中使用或不使用類   
 
 ***
 
