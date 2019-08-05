@@ -3,21 +3,33 @@
 ## Object 物件
 
 ---
-### &sect; 什麼是物件Object?
+
+## &sect; 什麼是物件 Object?
+
 ##### &para; key-value pair
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(1).JPG)  
-***
-##### &para; JS物件是key-value pairs的集合
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(2).JPG)  
-***
+
+![image](<https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(1).JPG>)
+
+---
+
+##### &para; JS 物件是 key-value pairs 的集合
+
+![image](<https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(2).JPG>)
+
+---
+
 ##### &para; 物件可以包含任何物件(key-value pairs)
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(3).JPG)
 
-***
+![image](<https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(3).JPG>)
+
+---
+
 ##### &para; 例如=> 物件內可含純值/物件/function
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(4).JPG)
 
-***
+![image](<https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(4).JPG>)
+
+---
+
 ### &sect; 兩種建立物件的方式
 
 1. 宣告
@@ -46,30 +58,36 @@ myObj.key = value;
 - object-----自己是一個類型
 
 ##### &para; 複雜基本類型:
+
 - object 的子類型 Array
 - object 的子類型 Function :可調用，可像普通物件般處理
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/fn.PNG))
+  ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/fn.PNG))
 
-***
-### &sect; JS中全部都是物件(或純值)
-* 作者提到
+---
+
+### &sect; JS 中全部都是物件(或純值)
+
+- 作者提到
+
 ```
 一個常見的錯誤論斷是“JavaScript 中的一切都是物件"
 ```
+
 因為简单基本类型 （string、number、boolean、null、和 undefined）自身 不是 object。
 
-* 另一種看法- JS中全部都是物件(或純值)
+- 另一種看法- JS 中全部都是物件(或純值)
 
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(2).JPG)
+![image](<https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(2).JPG>)
 
 [證明]  
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(3).JPG)
+![image](<https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(3).JPG>)
 
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(4).JPG)
+![image](<https://github.com/liontechirisho/js-obj-class/blob/master/img/js-allO%20(4).JPG>)
 
 ---
 
 ### &sect; 內建物件
+
 ##### 內建的函數(可 new)/有對應的方法和屬性
 
 - String
@@ -82,7 +100,7 @@ myObj.key = value;
 - RegExp
 - Error
 
-***
+---
 
 ### &sect; 基本類型值 vs 內建物件(子類型)
 
@@ -100,7 +118,7 @@ strObject instanceof String; // true
 ```
 
 JS 會強制轉型為 sting 物件  
-故不用new，仍可以使用 string 的屬性如 length↓↓↓↓↓
+故不用 new，仍可以使用 string 的屬性如 length↓↓↓↓↓
 
 ```js
 var strPrimitive = "I am a string";
@@ -112,7 +130,8 @@ console.log(strPrimitive.charAt(3)); // "m"
 
 **強烈推薦用字面型值操作即可，不需要特別 new**
 
-***
+---
+
 ##### &para; 各子類型狀況
 
 - String JS 會強制轉型，建議用字面形式寫
@@ -131,9 +150,11 @@ console.log(strPrimitive.charAt(3)); // "m"
 - Error -- 很少被手動創建，多拋出異常時自動創建
 
 ### &sect; 訪問物件內容之方法
+
 可使用兩種操作符:
-* .
-* []
+
+- .
+- []
 
 ```js
 var myObject = {
@@ -255,7 +276,9 @@ myArray[3]; // "baz"
 ---
 
 ### &sect; 複製物件 是一個大工程
+
 與淺拷貝
+
 ```js
 function anotherFunction() {
   /*..*/

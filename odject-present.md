@@ -334,7 +334,7 @@ a 有值 2 外，它還包含另外三個性質：writable，enumerable，和 co
 * 嚴格模式：TypeError  
 * 非嚴格模式：維持原值  
 
-### 2.可配置性（可配置的）
+### 2.可配置性（Configurable）
 
 * 是否可以使用 defineProperty（..）工具，修改它的描述符定義。  
 * configurable 設置為 false 是一個單向操作，不可撤銷！  
