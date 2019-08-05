@@ -16,7 +16,8 @@
 ***
 ### &para; 例如=> 物件內可含純值/物件/function
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/js-obj%20(4).JPG)
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/fn.PNG))
+***
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/fn.png)
 
 ***
 ## &sect; 兩種建立物件的方式
@@ -51,7 +52,7 @@ myObj.key = value;
 - object 的子類型 Function :可調用，可像普通物件般處理
 
 
-![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/ts.PNG)
+![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/ts.png)
 
 ***
 ## &sect; JS中全部都是物件(或純值)
@@ -118,21 +119,20 @@ console.log(strPrimitive.charAt(3)); // "m"
 
 ***
 ##### &para; 各子類型狀況
-
-- String JS 會強制轉型，建議用字面形式寫
-- Number JS 會強制轉型，建議用字面形式寫
-- Boolean JS 會強制轉型，建議用字面形式寫
-  --------------------------------------------------->
-- null 僅有字面形式，沒有 object
-- undefined 僅有字面形式，沒有 object
-- Date 僅有 object，沒有字面形式
-  --------------------------------------------------->
-- Object 不管寫字面還是構造建立，都是 object
-- Function 不管寫字面還是構造建立，都是 object
-- Array 不管寫字面還是構造建立，都是 object
-- RegExp 不管寫字面還是構造建立，都是 object
-  --------------------------------------------------->
-- Error -- 很少被手動創建，多拋出異常時自動創建
+- String JS 會強制轉型，建議用字面形式寫  
+- Number JS 會強制轉型，建議用字面形式寫  
+- Boolean JS 會強制轉型，建議用字面形式寫    
+  --------------------------------------------------->  
+- null 僅有字面形式，沒有 object  
+- undefined 僅有字面形式，沒有 object  
+- Date 僅有 object，沒有字面形式    
+  --------------------------------------------------->  
+- Object 不管寫字面還是構造建立，都是 object  
+- Function 不管寫字面還是構造建立，都是 object  
+- Array 不管寫字面還是構造建立，都是 object  
+- RegExp 不管寫字面還是構造建立，都是 object  
+  --------------------------------------------------->  
+- Error -- 很少被手動創建，多拋出異常時自動創建  
 
 ## &sect; 訪問物件內容之方法
 可使用兩種操作符:
@@ -230,11 +230,10 @@ myObject["[object Object]"];  －>物件被轉成字串 // "baz"
 
 ### &para; 屬性 vs 方法
 
-每次你訪問一個物件的屬性都是一個屬性訪問，無論你得到什麼類型的值。
+每次你訪問一個物件的屬性都是一個屬性訪問，  
+無論你得到什麼類型的值。  
 如果你恰好從屬性訪問中得到一個函數，**不會魔法般地變成方法** 。
-一個從屬性訪問得來的函數沒有任何特殊性
-
-可能最安全的結論是，在 JavaScript 中，“函數”和“方法”是可以互換使用的。
+最安全的結論是，在 JavaScript 中，“函數”和“方法”是可以互換使用的。  
 
 ME: 我不知道他為啥要特別講這個...
 
@@ -242,9 +241,9 @@ ME: 我不知道他為啥要特別講這個...
 
 ### &para; 不要亂玩 Array 的屬性
 
-數組也是物件，所以雖然每個索引都是正整數，你可以在數組上添加屬性：
-添加非數字屬性（不論是使用. 還是[]操作符語法）不會改變數組的長度所報告的值。
-如果你試圖在一個數組上添加屬性，但是屬性名看起來像一個數字，那麼最終它會成為一個數字索引（也就是改變了數組的內容）：
+數組也是物件 => 可以在數組上添加屬性：  
+添加非數字屬性（不論是使用. 還是[]操作符語法）不會改變length。
+添加像數字的屬性=> 會改變length：  
 
 ```js
 var myArray = ["foo", 42, "bar"];
@@ -277,7 +276,7 @@ var myObject = {
 anotherArray.push(anotherObject, myObject);
 ```
 
-1.淺拷貝
+1. 淺拷貝
 僅 copy 數值和物件位址
 可使用 ES6 Object.assign(..)
 
@@ -291,7 +290,7 @@ newObj.d === anotherFunction; // true
 
 → 想要不只拷貝物件位置?
 
-2.深拷貝
+2. 深拷貝
 物件拷貝-轉字串再轉回物件
 
 ```js
@@ -304,30 +303,15 @@ let noRepeat = JSON.parse(JSON.stringify(orderDay));
 
 ## &sect; 屬性描述符（Property Descriptors）
 
-為何有這個東西？
+為何有這個東西？  
 ES5 之前，JavaScript 語言沒有給出直接的方法，讓你的代碼可以考察或描述屬性性質間的區別，比如屬性是否為只讀(不可複寫)。
 在 ES5 改進了，
 所有的屬性都用屬性描述符（Property Descriptors）來描述。
 
-```js
-var myObject = {
-  a: 2
-};
-
-Object.getOwnPropertyDescriptor(myObject, "a");
-// {
-//    value: 2,
-//    writable: true,
-//    enumerable: true,
-//    configurable: true
-// }
-```
-
-a 有值 2 外，它還包含另外三個性質：writable，enumerable，和 configurable
-
 可以用 Object.defineProperty（..）來添加新屬性，或使用期望的性質來修改既存的屬性（如果它是 configurable 的！）
 
 ```js
+//Chorme 實作
 var myObject = {};
 Object.defineProperty(myObject, "a", {
   value: 2,
@@ -338,21 +322,36 @@ Object.defineProperty(myObject, "a", {
 
 myObject.a; // 2
 ```
+用Object.getOwnPropertyDescriptor()查找屬性描述符    
+
+```js
+//查找屬性描述符
+Object.getOwnPropertyDescriptor(myObject, "a");
+// {
+//    value: 2,
+//    writable: true,
+//    enumerable: true,
+//    configurable: true
+// }
+```
+
+a 有值 2 外，它還包含另外三個性質：writable，enumerable，和 configurable  
 
 ## &sect; 三個性質說明
 
 ### 1. 可寫性（Writable）
 
-writable 控制著你改變屬性值的能力。
-writable: false 表示不可再賦值
-再賦值結果 ↓↓↓↓↓↓
-嚴格模式：TypeError
-非嚴格模式：維持原值
+* writable 控制著你改變屬性值的能力。  
+* writable: false 表示不可再賦值  
+再賦值結果 ↓↓↓↓↓↓  
+* 嚴格模式：TypeError  
+* 非嚴格模式：維持原值  
 
 ### 2.可配置性（可配置的）
 
-是否可以使用 defineProperty（..）工具，修改它的描述符定義。
-configurable 設置為 false 是一個單向操作，不可撤銷！
+* 是否可以使用 defineProperty（..）工具，修改它的描述符定義。  
+* configurable 設置為 false 是一個單向操作，不可撤銷！  
+* 刪除操作符移除既存屬性的能力。  
 
 ```js
 var myObject = {
@@ -378,8 +377,6 @@ Object.defineProperty(myObject, "a", {
 }); // TypeError
 ```
 
-configurable:false
-阻止的另外一個事情是使用刪除操作符移除既存屬性的能力。
 
 ```js
 var myObject = {
@@ -403,11 +400,12 @@ myObject.a; // 2
 
 ### 3.可枚舉性（Enumerable）
 
-控制著一個屬性是否能在特定的物件的屬性枚舉操作中出現，比如 for..in 循環。
-設置為 false 將會阻止它出現在這樣的枚舉中，即使它依然完全是可以訪問的。
-所有一般默認設置是可枚舉的
+控制著一個屬性是否能在特定的物件的屬性枚舉操作中出現，比如 for..in 循環。  
+設置為 false 將會阻止它出現在這樣的枚舉中，即使它依然完全是可以訪問的。  
+所有一般默認設置是可枚舉的  
 
 ---
+用以上三種性質各種排列組合出來的可能  
 
 ## &sect; 不可變性（不變性）
 
@@ -421,7 +419,7 @@ myImmutableObject.foo.push(4);
 myImmutableObject.foo; // [1,2,3,4]
 ```
 
-注意：設置不可變不常見，如果你發現自己想要封印（封印）或凍結（freeze），請退一步來重新考慮你的程式設計
+注意：設置不可變不常見，如果你發現自己想要封印（封印）或凍結（freeze），請退一步來重新考慮你的程式設計  
 
 ### &para; 物件常量(Object Constant)
 
