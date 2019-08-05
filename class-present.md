@@ -74,7 +74,7 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 
 ## &sect; Class-based vs Prototype-based programming
 * 皆為ＯＯＰ
-* 主義差別在於繼承方式  
+* 主要差別在於繼承方式  
 
 ![image](https://github.com/liontechirisho/js-obj-class/blob/master/img/1_0jWIHlaV3zcjjniEOrovEQ.jpeg)  
 
@@ -114,7 +114,7 @@ https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%B
 * JS 擁有 一些 像類的語法元素（比如 new 和 instanceof）有一陣子了  
 * ES6 中:有 class 關鍵字（見附錄A）。**但，是class 是一種語法糖**      
 * 注意: 其他語言中遇到的 類 和在 JS 中模擬的“類”不同  
-* 你可以選擇在 JavaScript 中使用或不使用類   
+* 你可以選擇在 JavaScript 中使用或不使用類(v.s JAVA都是類)   
 
 ***
 
@@ -154,7 +154,7 @@ This object is a copy of all the characteristics described by the class.
 * 這個方法的名稱通常與類名相同  
 * 此方法會初始化實例所需的所有資訊（狀態）  
 
-```
+```JS
 class CoolGuy {
     specialTrick = nothing
 
@@ -187,7 +187,7 @@ Joe.showOff()   <---實例化Joe，可使用class制定且Joe 拷貝下來的方
 
 ###  &para; 類繼承
 
-```
+```JS
 //父類 載具
 class Vehicle {
 	engines = 1
@@ -204,7 +204,7 @@ class Vehicle {
 ```
 //兩個子類
 
-```
+```JS
 class Car inherits Vehicle {                       <----繼承Vehicle
 	wheels = 4
 
@@ -240,7 +240,7 @@ class SpeedBoat inherits Vehicle {                 <----繼承Vehicle
 或稱“虛擬多型（virtual polymorphism）”。  
 作者稱之**相對多型（relative polymorphism）** :根據你引用的實例是哪個類（class or Vehicle）而 多型（改變）。
 
-```
+```JS
 BMW =  new Car();
 BMW.drive()
 // 啟動引擎  往前開 ----class Vehicle 定義的方法 位於繼承層級上更高一層
@@ -367,7 +367,7 @@ X : 若寫成 Vehicle.drive()  (沒有綁定在car上呼叫) 則引用後無法�
 
 * 建立時就給car的內容
 
-```
+```JS
 var Car = mixin( Vehicle, {
     wheels: 4,
     drive: function() {        // 同名故覆蓋vehicle drive()
@@ -378,12 +378,12 @@ var Car = mixin( Vehicle, {
 ```
 
 * 建立時還沒給car的內容(“mixin”這個名稱來自於解釋這個方法：Car 混入 Vehicle 的內容 )
-```
+```JS
 // 首先，創建一個空物件
 // 將 Vehicle 的內容拷貝進去
 var Car = mixin( Vehicle, { } );
 ```
-```
+```JS
 // 現在拷貝 Car 的具體內容
 mixin( {
 	wheels: 4,
@@ -412,7 +412,7 @@ mixin( {
 ## &sect; 寄生繼承（Parasitic Inheritance）
 明確的 mixin 模式的一個變種  
 在某種意義上是明確的，而在某種意義上是隱含的  
-```
+```JS
 // “傳統的 JS 類” `Vehicle`
 function Vehicle() {
     this.engines = 1;
@@ -459,7 +459,7 @@ myCar.drive();
 ```
 ***
 ## &sect; 隱含的 Mixin（Implicit Mixins）
-```
+```JS
 var Something = {
     cool: function() {
         this.greeting = "Hello World";

@@ -172,20 +172,7 @@ myObject["a"]; // 2
       "total": 497,
       "state": "報名"
   },
-  //props
-dataKeySetting: {
-      // 保證出團
-      guaranteed: props.options.dataKeySetting.guaranteed || "guaranteed",
-      // 狀態
-      status: props.options.dataKeySetting.status || "status",
-      // 可賣團位
-      available:
-        props.options.dataKeySetting.available || "availableVancancy",
-      // 團位
-      total: props.options.dataKeySetting.total || "totalVacnacy",
-      // 價格
-      price: props.options.dataKeySetting.price || "price"
-    },
+
 //React
 <div className="content">
   <span>
@@ -232,8 +219,8 @@ myObject["[object Object]"];  －>物件被轉成字串 // "baz"
 
 每次你訪問一個物件的屬性都是一個屬性訪問，  
 無論你得到什麼類型的值。  
-如果你恰好從屬性訪問中得到一個函數，**不會魔法般地變成方法** 。
-最安全的結論是，在 JavaScript 中，“函數”和“方法”是可以互換使用的。  
+如果你恰好從屬性訪問中得到一個函數，**不會魔法般地變成方法** 。  
+最安全的結論是，在 JavaScript 中，“函數”和“方法”是可以互換使用的。    
 
 ME: 我不知道他為啥要特別講這個...
 
@@ -624,7 +611,7 @@ myObject.hasOwnProperty("b"); // false
 ```
 
 - **屬性是否可遍歷**
-  > - .propertyIsEnumerable(..) - 屬性名是否存該物件中
+  > - .propertyIsEnumerable(..) - 可否枚舉?
   > - Object.keys(..) - 返回一個所有可枚舉屬性的陣列
   > - Object.getOwnPropertyNames(..) - 返回一個 所有 屬性的陣列，不論能不能枚舉。
   >   Object.keys(..)
